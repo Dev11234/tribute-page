@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bandmembers.css">
+</head>
+<body>
+    <header class="one">
+        <div class="two">
+            <ul class="three">
+                <li id="uno"><a href="linkinpark.html">home</a></li>
+                <li id="dos"><a href="songlist.html">Songs list</a></li>
+                <li id="tres"><a href="bandmembers.html">Band Members
+                </a></li>
+                <li id="cuantro"><a href="stories.html">stories</a></li>
+                <li id="cinco"><input type="text" placeholder="search querry"></li>
+                <li id="seis"><button>Go!</button></li>
+            </ul>
+        </div>
+    </header>
+    <div class="info">
+        <div class="group1">
+            <h1>Band mambers</h1>
+            <ol>
+                <li><b>chester Benington</b>- Singer(star)</li>
+                <li><b>Mike Shinoda</b> - Vocalist, Rhythm Guitarist, Keyboardist</li>
+                <li><b>Brad Delson</b> - Lead Guitarist</li>
+                <li><b>Joe Hahn </b>- DJ, Turntablist</li>
+                <li><b>Dave Farrell</b> - Bassist</li>
+                <li><b>Emily Armstrong</b> - Co-Lead Vocalist</li>
+                <li><b>Colin Brittain</b> - Drummer</li>
+            </ol>
+            
+        </div>
+        <div class="carousel-container">
+        <div class="carousel">
+            <img id="chester" src="LPimages/chester bennington.jpg" alt="">
+            <img id="mike" src="LPimages/mike.jpg" alt="">
+            <img id="brad" src="LPimages/braddelson.jpg" alt="">
+            <img id="joe" src="LPimages/joe_hahn.jpg" alt="">
+            <img id="dave" src="LPimages/davefarrell.jpg" alt="">
+            <img id="emily" src="LPimages/emilyarmstrong.webp" alt="">
+            <img id="Colin" src="LPimages/ColinBrittain.jpg" alt=""> </marquee>
+            <div><button class="button prev" onclick="scrollImages(-1)">&#10094;</button>
+                <button class="button next" onclick="scrollImages(1)">&#10095;</button></div>
+            
+        </div>
+    </div>
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel img');
+
+        function scrollImages(direction) {
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            const offset = -currentIndex * 100;
+            images.forEach(img => {
+                img.style.transform = `translateX(${offset}%)`;
+            });
+        }
+    </script>
+</body>
+    
+</body>
+</html>
